@@ -1,4 +1,4 @@
-name: Android Build Release
+name: Unit test and build on PR
 
 on:
   pull_request:
