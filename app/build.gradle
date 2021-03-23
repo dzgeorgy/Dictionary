@@ -7,6 +7,25 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
+    signingConfigs {
+        release {
+            def keystoreProps = new Properties()
+            def keystorePropsFile = file("${rootDir}/app/keystore/keystore_config.properties")
+            if (keystorePropsFile.exists()) {
+                keystorePropsFile.withInputStream {keystoreProps.load(it)}
+                storeFile file("$keystoreProps.keystoreFile")
+                storePassword "$keystoreProps.keystorePassword"
+                keyAlias "$keystoreProps.keyAlias"
+                keyPassword "$keystoreProps.keyPassword"
+            } else {
+                storeFile file(System.getenv("KEYSTORE_FILE"))
+                storePassword System.getenv("KEYSTORE_PASSWORD")
+                keyAlias System.getenv("KEY_ALIAS")
+                keyPassword System.getenv("KEY_PASSWORD")
+            }
+        }
+    }
+
     defaultConfig {
         applicationId "ru.dzgeorgy.dictionary"
         minSdkVersion 21
@@ -19,8 +38,14 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig = signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            shrinkResources false
         }
     }
     compileOptions {
