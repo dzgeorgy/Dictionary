@@ -1,0 +1,17 @@
+import dependencies.Dependencies
+
+apply from: Dependencies.common
+
+dependencies {
+    implementation Dependencies.Compose.ui
+    implementation Dependencies.Compose.material
+    implementation Dependencies.Compose.tooling
+
+    implementation Dependencies.Core.core
+    implementation Dependencies.AppCompat.appcompat
+    implementation Dependencies.Lifecycle.livedata
+    implementation Dependencies.Lifecycle.viewModel
+    implementation Dependencies.Activity.compose
+
+    androidTestImplementation Dependencies.Compose.test
+}
