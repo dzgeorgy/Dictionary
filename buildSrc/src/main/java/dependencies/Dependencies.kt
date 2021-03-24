@@ -33,6 +33,10 @@ object Dependencies {
         const val compose = "androidx.activity:activity-compose:${Version.activity}"
     }
 
+    object Paging {
+        const val common = "androidx.paging:paging-common:${Version.paging}"
+    }
+
     object Test {
         const val junit = "junit:junit:${Version.junit}"
         const val androidTest = "androidx.test.ext:junit:${Version.androidTest}"

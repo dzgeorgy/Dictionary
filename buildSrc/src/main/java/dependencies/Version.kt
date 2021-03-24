@@ -16,6 +16,7 @@ object Version {
     const val appcompat = "1.3.0-rc01"
     const val lifecycle = "2.3.1"
     const val activity = "1.3.0-alpha05"
+    const val paging = "3.0.0-beta03"
 
     //Test libraries
     const val junit = "4.13.2"
