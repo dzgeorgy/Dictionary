@@ -3,6 +3,8 @@ import dependencies.Dependencies
 apply from: Dependencies.common
 
 dependencies {
+    implementation project(Dependencies.Module.domain)
+
     implementation Dependencies.Compose.ui
     implementation Dependencies.Compose.material
     implementation Dependencies.Compose.tooling

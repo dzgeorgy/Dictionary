@@ -7,7 +7,9 @@ object Dependencies {
 
     const val dependency = "./gradleScript/dependencies.gradle"
 
-    object Module
+    object Module {
+        const val domain = ":domain"
+    }
 
     object Compose {
         const val ui = "androidx.compose.ui:ui:${Version.compose}"
