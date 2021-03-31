@@ -1,0 +1,13 @@
+import dependencies.Dependencies
+
+plugins {
+    id 'java-library'
+    id 'kotlin'
+}
+
+apply from: Dependencies.dependency
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}

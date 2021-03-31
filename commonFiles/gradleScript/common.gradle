@@ -1,0 +1,7 @@
+import dependencies.Dependencies
+
+dependencies {
+    implementation Dependencies.Core.core
+    testImplementation Dependencies.Test.junit
+    androidTestImplementation Dependencies.Test.androidTest
+}
