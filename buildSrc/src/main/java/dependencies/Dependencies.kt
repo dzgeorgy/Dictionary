@@ -5,7 +5,7 @@ object Dependencies {
     private const val path = "../commonFiles/gradleScript/"
     const val common = "${path}common.gradle"
 
-    const val dependency = "./gradleScript/dependencies.gradle"
+    const val dependency = "./dependencies.gradle"
 
     object Module {
         const val domain = ":domain"
